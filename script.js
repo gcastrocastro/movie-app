@@ -1,28 +1,20 @@
 const APIKEY = '04c35731a5ee918f014970082a0088b1';
-const APIURL = 'http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1';
+const APIURL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1';
 const IMGPATH = 'https://image.tmdb.org/t/p/w1280';
 const SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
-// put on top to initially get movies by popularity
 getMovies(APIURL);
 
 async function getMovies(url) {
     const resp = await fetch(url);
     const respData = await resp.json();
-
-    // This is what gives us the movie data in the console
-    // to know how to access the array properties we need
-    console.log(respData);
-
-    // this is to call showMovies with the results of respData
     showMovies(respData.results);
 }
 
 function showMovies(movies) {
-    // initially, clear main
     main.innerHTML = '';
 
     movies.forEach(movie =>{
@@ -57,7 +49,6 @@ function getClassByRate(vote) {
 }
 
 form.addEventListener('submit', (e) => {
-    // this is so the form doesn't immediately submit when clicking it
     e.preventDefault();
 
     const searchTerm = search.value;
