@@ -9,7 +9,8 @@ Find your new favorite movie using this user-friendly, responsive search interfa
 Javascript, HTML5, CSS3, MovieDb API
 
 # Getting Started
-gcastrocastro.github.io/movie-app/
+
+https://gcastrocastro.github.io/movie-app/
 
 # Next Steps: 
 - To incorporate a favorites container.
